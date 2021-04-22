@@ -48,5 +48,9 @@ lastAppendVersion(X, List) :- append(_, [X], List).
 memberAppend(X, List) :- append(_, [X|_], List).
 
 % HW:
-% insert
-% remove
+%insert(X, L, R) :- append(A, B, L), append(A, [X], C), append(C, B, R). 
+insert(X, List, Result) :- append(Left, Right, List), append(Left, [X|Right], Result).
+
+%remove(X, List, Result) :- append(Left, [X|Right], List), append(Left, Right, Result).
+remove(X, [X|Tail], Tail).
+remove(X, [Head|Tail], [Head|NewTail]) :- remove(X, Tail, NewTail). 
