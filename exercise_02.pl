@@ -81,4 +81,6 @@ m(_, []).
 m(List, [Head|Tail]) :- m(List, Tail), member(Head, List).
 
 % HW:
-% reverse(List, Result).
+reverse([],[]).
+reverse([Head|Tail], Result) :- reverse(Tail, Reversed), append(Reversed, [Head], Result).
+
