@@ -59,7 +59,7 @@ natural20(X) :- between(0, 20, X).
 
 % Task 8
 range(A, B, []) :- A > B.
-range(A, B, [A|Tail]) :- A1 is A+1, range(A1, B, Tail).
+range(A, B, [A|Tail]) :- A =< B, A1 is A+1, range(A1, B, Tail).
 
 % Task 9 - NxN
 %pairNatural(X, Y).
