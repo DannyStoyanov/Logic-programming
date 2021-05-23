@@ -75,3 +75,4 @@ hasCycle1([V, E]) :- spanningTree([V, E], ST), len(E, N), len(ST, M), N > M.
 % Task 10
 criticalVertex([V, E], X):- member(X, V), member(A, V), member(B, V), not(member(X, [A, B])), path([V, E], A, B, P), member(X, P), 
     not((path([V, E], A, B, P1), not(member(X, P1)))).
+    
